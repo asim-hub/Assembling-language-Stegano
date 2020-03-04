@@ -1,0 +1,43 @@
+ASIMIONESEI DANIEL 321CD
+TASK1:
+In rezolvarea taku-lui am calcuat numarul de elemente din vector si
+l-am adaugat pe stiva alaturi cu img, cele doua valori fiind cei doi parametrii ai
+functieti bruteforce_singlebyte_xor si am apelat functia.In aceasta
+functie fiecare cheie de la 0 la 255 am aplicat-o pe matrice si am
+verificat daca exista cuvantul cautat.In cazul in care nu exista ,
+aplic din nou cheia pe matrice ca sa obtin matrice initiala  si fac
+acelasi procedeu pentru urmatoarea cheie.Daca gasesc cuvantul
+(cautarea cuvantului o fac litera cu litera), impart indexul pozitiei
+din vector pe care ma aflu, la lungimea unei linii si memorez
+in eax partea intreaga.
+Dupa apelul functiei eliberez stiva si afisez rezultatele.
+TASK2:
+La acest task ma folosesc de functia de la task-ul anterior pentru
+a afla linia si cheia.Cheia va fi in eax , iar linia in ebx.
+(In urma apelului functiei de laprimul task , matricea va ramane decriptata).
+Incarc pe stiva cheia,linia si img,iar apoi apelez functia overwrite.
+In aceasta functie calculez noua cheie dupa formula data si o
+salvez in eax,apoi calulez indexul pozitiei de pe care incep sa
+suprascriu mesajul dat si il salvez in ebx.Dupa calcularea indexului
+scriu caracter cu caracter propozitia data si aplic noua cheie pe intreaga
+matrice, iar la final apelez functia de afisare.
+TASK3:
+La acest task am convertit indexul care era string in int folosind functia atoi.
+Si am incarcat pe stiva in ordine inversa (ca si la celelate functii)
+parametrii: index,mesaj si img, iar apoi am apelat functia morse_encrypt.
+Aici am salvat in eax imaginea, in ebx mesajul , in edx indexul pentru matrice,
+iar in ecx indexul pozitiei pe care ma aflu in mesaj.
+Apoi am parcurs mesajul si am verificat fiecare caracter in parte si am
+scris in vector codarea lui specifica urmata de un spatiu incepand de la indexul dat.
+Cand am parcurs fiecare caracter din mesaj am afisat noua matrice.
+Task4:
+La acest task am convertit din string in int indexul matricei, de pe care incep sa
+adaug biti stringu-lui la finalul elementelor matricei.Am incarcat parametri pe stiva
+si am apelat functia lsb_encode.In acesta functie am doua masti (dl si cl-masca de referinta)
+,mastile fiind pe 8 biti,ambele incep de la valoarea 128(10000000) si pe dl aplic si logic cu
+caracterul din string pe care ma aflu cu indexul(esi).Daca valoarea lui dl ramane aceeasi cu valoarea
+lui cl insemna ca trebuie sa suprascriu ultimul bit al elementului din matrice cu 1,
+iar daca valorile celor doua masti nu sunt egale ,arunci suprascriu ultimul bit cu 0.
+Apoi shiftez la dreapta masca si repet pasi pana cand ea devine 0, iar atunci ma deplasez
+in string si repet procedura.Lafinalul acestor jumpuri mai fac un pas suplimentar.  
+
